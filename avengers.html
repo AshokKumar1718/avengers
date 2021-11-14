@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="avengers.css">
+         <!-- <script src="app.js"></script> -->
+    </head> 
+     
+    <body>
+        <div style=" padding: 10%;width:500px;height: 500px;">
+            <div class="main-grid" style="display: flex;">
+             
+                <div class ="spdierman" id="spider">
+                    <img class="image" id="spiderImg">
+                    <p id="spiderName">  </p>
+                    <p class ="strength"class ="strength" id="spiderStrength"> </p>
+                </div>
+    
+                <div class="superman">
+                    <img class="image" id="supermanImg">
+                    <p id="superManName">  </p>
+                    <p class ="strength" id="superManStrength"> </p>
+                    
+                </div>
+                <div class="heman">
+                    <img class="image" id="hemanImg">
+                    <p id="hemanName">  </p>
+                    <p class ="strength" id="hemanStrength"> </p>
+                  
+                </div>
+                <div class="batman">
+                    <img class="image" id="batmanImg">
+                    <p id="batmanName">  </p>
+                    <p class ="strength" id="batmanStrength"> </p>
+                   
+                </div>
+                <div class="mugamoodi">
+                    <img class="image" id="mugamoodiImg">
+                    <p id="mugamoodiName">  </p>
+                    <p class ="strength" id="mugamoodiStrength"> </p>
+                   
+                </div>
+                <div class="joker">
+                    <img class="image" id="jokerImg">
+                    <p id="jokerName">  </p>
+                    <p class ="strength" id="jokerStrength"> </p>
+                   
+                </div>
+                <div class="thanos">
+                    <img class="image" id="thanosImg">
+                    <p id="thanosName">  </p>
+                    <p class ="strength" id="thanosStrength"> </p>
+                   
+                </div>
+    
+    
+            </div>
+        </div>
+        
+     </body>
+<script>
+        const check =document.getElementById("submitted");
+var HerosName = ["spiderman","superman","heman","batman","mugamoodi","joker","thanos"];
+let spider_name = document.getElementById("spiderName") 
+let spider_strength = document.getElementById("spiderStrength") 
+let spider_image = document.getElementById("spiderImg") 
+let superman_name = document.getElementById("superManName") 
+let superman_strength = document.getElementById("superManStrength") 
+let superman_image = document.getElementById("supermanImg") 
+let heman_name = document.getElementById("hemanName") 
+let heman_strength = document.getElementById("hemanStrength") 
+let heman_image = document.getElementById("hemanImg") 
+let batman_name = document.getElementById("batmanName") 
+let batman_strength = document.getElementById("batmanStrength") 
+let batman_image = document.getElementById("batmanImg") 
+let mugamoodi_name = document.getElementById("mugamoodiName") 
+let mugamoodi_strength = document.getElementById("mugamoodiStrength") 
+let mugamoodi_image = document.getElementById("mugamoodiImg") 
+let joker_name = document.getElementById("jokerName") 
+let joker_strength = document.getElementById("jokerStrength") 
+let joker_image = document.getElementById("jokerImg") 
+let thanos_name = document.getElementById("thanosName") 
+let thanos_strength = document.getElementById("thanosStrength") 
+let thanos_image = document.getElementById("thanosImg") 
+
+ console.log("goi",superman_image)
+console.log("check",check)
+initPlayers(HerosName);
+ 
+
+ function initPlayers(names) {
+    let result = [];
+    console.log("names",names)
+     for( let i=0 ;i< names.length;i++) {
+         
+         let hero= {};
+         hero.name = names[i];
+         hero.strength =  Math.floor(Math.random() * 100 ) + 1;
+         if(hero.name =="spiderman"){
+            hero.image= `images/super${i}.png`
+        }  else if(hero.name =="superman"){
+            console.log(i)
+            hero.image =`images/super${i}.png`
+        }  else if(hero.name =="heman"){
+            hero.image =`images/super${i}.png`
+        }  else if(hero.name =="batman"){
+            hero.image =`images/super${i}.png`
+        }  else if(hero.name =="mugamoodi"){
+            hero.image =`images/super${i}.png`
+        }  else if(hero.name =="joker"){
+            hero.image =`images/super${i}.png`
+        }  else if(hero.name =="thanos"){
+            hero.image =`images/super${i}.png`
+        } 
+
+        if(hero.name =="joker" || hero.name =="thanos"){
+            hero.type="villian"   
+        } else{
+            hero.type="hero"
+        }
+        
+        result.push(hero)
+
+     }
+      console.log("all heros",result)
+      for(let hero of result){
+          console.log("hero",hero)
+      if(hero.name =="spiderman") {
+            spider_name.innerHTML = hero.name
+            spider_strength.innerHTML = hero.strength
+            spider_image.src = hero.image;
+        }
+        if(hero.name == "superman") {
+            superman_name.innerHTML = hero.name
+            superman_strength.innerHTML = hero.strength
+            superman_image.src = hero.image;
+        
+        }
+        if(hero.name == "heman") {
+            heman_name.innerHTML = hero.name
+            heman_strength.innerHTML = hero.strength
+            heman_image.src = hero.image;
+        
+        }
+        if(hero.name == "batman") {
+            batman_name.innerHTML = hero.name
+            batman_strength.innerHTML = hero.strength
+            batman_image.src = hero.image;
+        
+        }
+        if(hero.name == "mugamoodi") {
+           mugamoodi_name.innerHTML = hero.name
+           mugamoodi_strength.innerHTML = hero.strength
+           mugamoodi_image.src = hero.image;
+        
+        }if(hero.name == "joker") {
+           joker_name.innerHTML = hero.name
+           joker_strength.innerHTML = hero.strength
+           joker_image.src = hero.image;
+        
+        }
+        if(hero.name == "thanos") {
+           thanos_name.innerHTML = hero.name
+           thanos_strength.innerHTML = hero.strength
+           thanos_image.src = hero.image;
+        
+        }
+    }
+}
+        
+    </script>
+   
+</html>
